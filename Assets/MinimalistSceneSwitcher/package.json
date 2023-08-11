@@ -7,6 +7,13 @@
 	"keywords": [ "editor", "scenes" ],
 	"category": "editor extensions",
 	"dependencies": {},
+	"samples": [
+		{
+			"displayName": "Samples",
+			"description": "Contains sample scenes in order to test the exentsion",
+			"path": "Samples~"
+		}
+	],
 	"author": {
 		"name": "Mucho Besto Studio",
 		"url": "https://muchobestostudio.com/"

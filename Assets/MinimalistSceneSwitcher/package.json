@@ -1,7 +1,7 @@
 {
 	"name": "com.muchobestostudio.minimalistsceneswitcher",
 	"displayName": "Minimalist Scene Switcher",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"unity": "2020.3",
 	"description": "Minimalist Scene Switcher is an extension to switch easily between scenes in the Unity Editor.",
 	"keywords": [ "editor", "scenes" ],

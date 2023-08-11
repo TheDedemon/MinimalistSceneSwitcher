@@ -1,0 +1,16 @@
+{
+    "name": "com.muchobestostudio.minimalistsceneswitcher.editor",
+    "rootNamespace": "MuchoBestoStudio.MinimalistSceneSwitcher.Editor",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

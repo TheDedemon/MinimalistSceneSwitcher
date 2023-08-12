@@ -4,5 +4,6 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 	{
 		public string Path;
 		public string Name;
+		public bool IsInHierarchy;
 	}
 }

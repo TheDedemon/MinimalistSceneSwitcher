@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -12,7 +10,6 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 		#region Variables
 
 		private string _currentScenePath = string.Empty;
-		private SceneData[] _scenesData = new SceneData[0];
 
 		#endregion
 
@@ -21,20 +18,6 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 		public CustomPopup(string currentScenePath)
 		{
 			_currentScenePath = currentScenePath;
-
-			RetrieveScenesAssets();
-
-			EditorApplication.projectChanged -= OnProjectChanged;
-			EditorApplication.projectChanged += OnProjectChanged;
-		}
-
-		#endregion
-
-		#region Unity's Editor Application Callback
-
-		private void OnProjectChanged()
-		{
-			RetrieveScenesAssets();
 		}
 
 		#endregion
@@ -43,38 +26,34 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 
 		public override void OnGUI(Rect rect)
 		{
-			for (int sceneIndex = 0; sceneIndex < _scenesData.Length; sceneIndex++)
+			for (int index = 0; index < SceneDatabase.Data.Length; index++)
 			{
-				if (GUILayout.Button(_scenesData[sceneIndex].Name))
+				SceneData data = SceneDatabase.Data[index];
+				if (data.IsInHierarchy)
 				{
-					editorWindow.Close();
+					GUI.enabled = false;
 
-					ChangeScene(_currentScenePath, _scenesData[sceneIndex].Path);
+					GUILayout.Button($"{data.Name} (loaded)");
+				}
+				else
+				{
+					GUI.enabled = true;
+
+					if (GUILayout.Button(data.Name))
+					{
+						editorWindow.Close();
+
+						ChangeScene(_currentScenePath, data.Path);
+					}
 				}
 			}
+
+			GUI.enabled = true;
 		}
 
 		#endregion
 
 		#region Scenes
-
-		private void RetrieveScenesAssets()
-		{
-			string[] scenesGuid = AssetDatabase.FindAssets("t:Scene");
-
-			_scenesData = new SceneData[scenesGuid.Length];
-			for (int index = 0; index < scenesGuid.Length; index++)
-			{
-				string scenePath = AssetDatabase.GUIDToAssetPath(scenesGuid[index]);
-				string sceneName = Path.GetFileNameWithoutExtension(scenePath);
-
-				_scenesData[index] = new SceneData()
-				{
-					Path = scenePath,
-					Name = sceneName,
-				};
-			}
-		}
 
 		private static void ChangeScene(string previousScenePath, string newScenePath)
 		{
@@ -84,7 +63,7 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 				return;
 			}
 
-			Scene activeScene = SceneManager.GetActiveScene();
+			Scene activeScene = EditorSceneManager.GetActiveScene();
 			if (activeScene.path == previousScenePath)
 			{
 				if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())

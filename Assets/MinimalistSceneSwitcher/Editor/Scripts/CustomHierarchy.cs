@@ -39,16 +39,22 @@ namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
 			for (int index = 0; index < SceneManager.sceneCount; index++)
 			{
 				Scene loadedScene = SceneManager.GetSceneAt(index);
-				if (loadedScene.GetHashCode() == instanceID)
+				if (loadedScene.GetHashCode() != instanceID)
 				{
-					Rect buttonRect = new Rect(selectionRect.xMax - ButtonWidth, selectionRect.yMin, ButtonWidth, selectionRect.height);
-					if (GUI.Button(buttonRect, new GUIContent(EditorGUIUtility.IconContent(ButtonIcon).image, ButtonTooltip)))
-					{
-						PopupWindow.Show(buttonRect, new CustomPopup(loadedScene.path));
-					}
-
-					return;
+					continue;
 				}
+
+				GUI.enabled = SceneDatabase.HasScene() && !SceneDatabase.IsAllScenesOpened();
+
+				Rect buttonRect = new Rect(selectionRect.xMax - ButtonWidth, selectionRect.yMin, ButtonWidth, selectionRect.height);
+				if (GUI.Button(buttonRect, new GUIContent(EditorGUIUtility.IconContent(ButtonIcon).image, ButtonTooltip)))
+				{
+					PopupWindow.Show(buttonRect, new CustomPopup(loadedScene.path));
+				}
+
+				GUI.enabled = true;
+
+				return;
 			}
 		}
 

@@ -1,5 +1,5 @@
 {
-	"name": "com.muchobestostudio.minimalistsceneswitcher",
+	"name": "com.thededemon.minimalistsceneswitcher",
 	"displayName": "Minimalist Scene Switcher",
 	"version": "1.1.0",
 	"unity": "2020.3",
@@ -15,7 +15,7 @@
 		}
 	],
 	"author": {
-		"name": "Mucho Besto Studio",
-		"url": "https://muchobestostudio.com/"
+		"name": "TheDedemon",
+		"url": "https://github.com/TheDedemon"
 	}
 }

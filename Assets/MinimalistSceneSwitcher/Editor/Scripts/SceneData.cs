@@ -1,4 +1,4 @@
-namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
+namespace TheDedemon.MinimalistSceneSwitcher.Editor
 {
 	public struct SceneData
 	{

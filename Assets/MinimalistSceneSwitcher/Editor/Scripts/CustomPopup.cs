@@ -3,7 +3,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
+namespace TheDedemon.MinimalistSceneSwitcher.Editor
 {
 	public class CustomPopup : PopupWindowContent
 	{

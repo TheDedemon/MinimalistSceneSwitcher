@@ -18,5 +18,5 @@ It works only with active and additive scenes (doesn't include sub-scenes from D
 ## Installation
 This package is available via git url by adding this entry in your **manifest.json**
 ```
-"com.muchobestostudio.minimalistsceneswitcher": "https://github.com/MuchoBestoStudio/MinimalistSceneSwitcher.git?path=/Assets/MinimalistSceneSwitcher"
+"com.thededemon.minimalistsceneswitcher": "https://github.com/TheDedemon/MinimalistSceneSwitcher.git?path=/Assets/MinimalistSceneSwitcher"
 ```

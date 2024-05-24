@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
+namespace TheDedemon.MinimalistSceneSwitcher.Editor
 {
 	[InitializeOnLoad]
 	public static class CustomHierarchy

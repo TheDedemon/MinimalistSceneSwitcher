@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace MuchoBestoStudio.MinimalistSceneSwitcher.Editor
+namespace TheDedemon.MinimalistSceneSwitcher.Editor
 {
 	[InitializeOnLoad]
 	public static class SceneDatabase

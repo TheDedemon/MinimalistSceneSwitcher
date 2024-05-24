@@ -1,6 +1,6 @@
 {
-    "name": "com.muchobestostudio.minimalistsceneswitcher.editor",
-    "rootNamespace": "MuchoBestoStudio.MinimalistSceneSwitcher.Editor",
+    "name": "com.thededemon.minimalistsceneswitcher.editor",
+    "rootNamespace": "TheDedemon.MinimalistSceneSwitcher.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"
